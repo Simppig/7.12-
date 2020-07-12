@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object练习</title>
+</head>
+
+<body>
+
+    <script>
+        //object
+        // var obj1 = {
+        //     name: '张三'
+        // };
+        // var obj2 = {
+        //     age: 18
+        // };
+        // var obj3 = {
+        //     say: function() {
+        //         console.log('说话');
+        //     }
+        // }
+        // console.log(Object.assign(obj1, obj2, obj3)); //{name: "张三", age: 18, say: ƒ}
+        // console.log(obj1, obj2); // {name: "张三", age: 18, say: ƒ}   {age: 18}
+
+        // // 将对象obj拷贝到newObj
+        // var obj = {
+        //     name: '张三',
+        //     age: 20
+        // };
+
+        // var newObj = Object.assign({}, obj);
+        // //用于判断两个值是否相同
+        // Object.is(+0, -0); //false
+        // Object.is(NaN, NaN); //true
+        // //确定一个对象是否存在于另一个对象的原型链中
+        // function a() {}
+        // var b = new a();
+        // console.log(a.prototype.isPrototypeOf(b)); //true
+        // //直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
+        // var obj = new Object();
+        // Object.defineProperty(obj, 'name', {
+        //     configurable: false,
+        //     writable: true,
+        //     enumerable: true, //该属性是否可枚举
+        //     value: '张三'
+        // })
+        // console.log(obj.name) //张三
+
+        // //直接在一个对象上定义一个或多个新的属性或修改现有属性，并返回该对象。
+        // var obj = new Object();
+        // Object.defineProperties(obj, {
+        //     name: {
+        //         value: '张三',
+        //         configurable: false,
+        //         writable: true,
+        //         enumerable: true
+        //     },
+        //     age: {
+        //         value: 18,
+        //         configurable: true
+        //     }
+        // })
+        // console.log(obj.name, obj.age) // 张三, 18
+
+        // //阻止修改现有属性的特性和值，并阻止添加新属性。
+        // var obj = {
+        //     name: '张三',
+        //     age: 18
+        // };
+        // Object.freeze(obj)
+        // obj.name = '李四';
+        // obj.sex = '男';
+        // console.log(obj) //{name: "张三", age: 18}
+
+        // // 用途：用const声明的对象属性方法任然可修改，可以利用这个方法将对象//彻底冻结，使其符合const变量的含义
+        // var obj = {
+        //     name: "zhangsan",
+        //     age: 20
+        // }
+        // Object.freeze(obj);
+        // obj.name = "lisi";
+        // console.log(obj.name); // "zhangsan"
+
+        // //ES6对象的遍历
+        // //for in 循环
+        // var obj = {
+        //     name: '小米',
+        //     age: 18,
+        //     say: function() {
+        //         console.log('你好');
+        //     }
+        // }
+        // for (var i in obj) {
+        //     console.log(obj[i]);
+        // }
+        // //Object.keys(obj)
+        // //返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。
+        // var obj = {
+        //     'a': '123',
+        //     'b': '345'
+        // };
+        // console.log(Object.keys(obj)); //['a','b']
+
+        // // 如果键名是数字，则按从小到大排列
+        // var obj1 = {
+        //     100: "a",
+        //     2: "b",
+        //     7: "c"
+        // };
+        // console.log(Object.keys(obj1)); // console: ["2", "7", "100"]
+
+        // var obj2 = Object.create({}, {
+        //     getFoo: {
+        //         value: function() {
+        //             return this.foo
+        //         }
+        //     }
+        // });
+        // obj2.foo = 1;
+        // console.log(Object.keys(obj2)); // ["foo"]
+
+        // Object.values(obj)
+        //方法返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用for...in循环的顺序相同( 区别在于 for-in 循环枚举原型链中的属性 )。
+
+        var obj = {
+            name: 'zhangsan',
+            age: 20
+        };
+        console.log(Object.values(obj)); // ['zhangsan', 20]
+    </script>
+
+</body>
+
+</html>

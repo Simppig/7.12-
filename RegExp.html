@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ["aa", "bb", "cc", "dd"];
+        var str = "aaffddxxccrbbrffdd";
+
+        function mingan(arr, str) {
+            arr.forEach((value, index) => {
+                var reg = new RegExp(value, "g");
+                str = str.replace(reg, "**");
+            })
+            return str;
+        }
+        console.log(mingan(arr, str));
+        console.log(str);
+        //查询字符串中符合正则匹配的内容
+        var str = "I love antzone ,this is animate";
+        var reg = /an/g;
+        console.log(reg.exec(str));
+        console.log(reg.exec(str));
+        console.log(reg.exec(str));
+
+        //正则匹配身份证号
+        var reg = /^[1-9][0-9]{16}[0-9xX]$/
+        var str = "11112225478963589x";
+        console.log(reg.test(str));
+        //用正则表达式验证邮箱
+
+        var reg = new RegExp(/^([a-zA-Z0-9._-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/);
+        // 16 进制颜色正则
+
+        var reg = /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/;
+        // 验证车牌号
+
+        var reg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/
+            //验证中文“\ u4e00” 和“\ u9fa5” 是unicode编码， 并且正好是中文编码的开始和结束的两个值， 所以这个正则表达式可以用来判断字符串中是否包含中文。
+
+        var reg = /[\u4e00-\u9fa5]{2,}/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+
+<body>
+    <script>
+        //字符串长度
+        var str = 'Hello Word';
+        console.log(str.length);
+
+        //返回下标为index的子字符串
+        console.log(str.charAt(6));
+
+        // 根据下标， 返回对应下标的字符的ACSCII码
+        console.log(str.charCodeAt(7));
+
+        // 将ACSCII码转化成字符串， 涉及到数字与字母之间的转化可以使用该方法
+        console.log(String.fromCharCode(97));
+
+        // 查找一个字符或者字符串在字符串中第一次出现的位置, 未找到则返回 - 1、
+        console.log(str.indexOf('l'));
+
+        // 倒序查找一个字符或者字符串在字符串中第一次出现的位置, 返回位置，, 未找到则返回 - 1、
+        console.log(str.lastIndexOf('d'))
+
+        // 将指定的字符串替换， 只能替换第一个
+        // 注意：返回替换后的字符串 不修改原字符串， 所以使用时需要将replace方法的返回值保存
+        console.log(str.replace('o', 'a'));
+
+        //字符串截取， 识别负数， 跟数组相同
+        // 注意： 截取时， 包含起始下标， 不包含结束下标； 不修改原字符串
+        console.log(str.slice(1, 5));
+
+        // str.substring(起始下标, 结束下标)不识别负数
+
+        // 根据长度进行字符串截取
+        console.log(str.substr(2, 5));
+
+
+        // 以某一字符串将目标字符串分割， 可用于将特定格式的字符串转化如2018 / 10 / 20
+
+        console.log(str.split('o'));
+        console.log(str.split(''));
+        // 将str字符串中的字符转化为小写， 不修改原字符串
+        console.log(str.toLowerCase());
+        // 将str字符串中的字符转化为大写
+        console.log(str.toUpperCase());
+
+
+        // 将字符串左右空格去除， 可用于接收表单数据 IE9以下不识别
+        var str1 = "  hello   ";
+        console.log(str1.trim());
+
+        // 在字符串内检索指定的值， 或找到一个或多个正则表达式的匹配
+
+
+        console.log(str.match('o'));
+        console.log(str.match(/o/g));
+        console.log(str.concat('a', 'b', 'c'));
+
+
+        console.log('abc'.padStart(10)); // "       abc"
+        console.log('abc'.padStart(10, "123")); // "1231231abc"
+        console.log('abc'.padStart(6, "123465")); // "123abc"
+        console.log('abc'.padStart(8, "0")); // "00000abc"
+        console.log('abc'.padStart(1)); // "abc"
+
+        console.log('abc'.padEnd(10)); // "abc       "
+        console.log('abc'.padEnd(10, "123")); // "abc1231231"
+        console.log('abc'.padEnd(6, "123465")); // "abc123"
+        console.log('abc'.padEnd(8, "0")); // "abc00000"
+        console.log('abc'.padEnd(1)); // "abc"
+        // 使用场景： 得到具有固定长度的数据（ 时间、 二进制数、 十六进制数）
+        // // 获取时间，如果只有一位则前面用0填充
+        var time = new Date();
+        var h = String(time.getHours()).padStart(2, '0')
+        var m = String(time.getMinutes()).padStart(2, '0')
+        var s = String(time.getSeconds()).padStart(2, '0')
+        console.log(`${h}:${m}:${s}`) // 18:09:03
+            // 字符串与json对象之间的转换
+    </script>
+</body>
+
+</html>
